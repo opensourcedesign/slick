@@ -1,0 +1,40 @@
+/*** Settings ***/
+
+#settings .title {
+	margin-bottom: -10px;
+}
+
+#settings .opt {
+	display: block;
+	padding: 5px 0 10px 1px;
+}
+
+#settings .opt input {
+	float: left;
+	margin: 4px 10px 0 0;
+}
+
+#settings .about,
+#settings #play {
+	color: #7f8c8d;
+}
+
+#settings .about small {
+	margin-left: 2px;
+}
+
+#settings #play:hover {
+	opacity: .8;
+}
+
+#settings #play:before {
+	content: "\f028";
+	font: 14px FontAwesome;
+	margin-right: 9px;
+}
+
+#settings .about {
+	font-size: 14px;
+	padding-top: 2px;
+	line-height: 1.8;
+}

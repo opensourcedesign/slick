@@ -1,0 +1,93 @@
+@media (max-width: 768px) {
+	.container {
+		margin-top: 60px !important;
+	}
+	#viewport.lt {
+		-webkit-transform: translate3d(240px, 0, 0);
+		        transform: translate3d(240px, 0, 0);
+	}
+	#viewport.rt #chat .sidebar {
+		-webkit-transform: translate3d(-200px, 0, 0);
+		        transform: translate3d(-200px, 0, 0);
+	}
+	#sidebar {
+		left: -220px;
+	}
+	#footer {
+		left: -215px;
+		width: 215px;
+	}
+	#sidebar .close {
+		display: none;
+	}
+	#sidebar .chan:hover .badge {
+		opacity: 1;
+	}
+	#sidebar .empty:before {
+		margin-top: 0;
+	}
+	#main {
+		left: 5px;
+		right: 5px;
+	}
+	#chat .chat {
+		right: 0;
+	}
+	#viewport .lt,
+	#viewport .channel .rt {
+		display: block;
+	}
+	#viewport .rt {
+		margin-left: 18px;
+	}
+	#windows .window .header {
+		display: block;
+	}
+	#chat .sidebar {
+		right: -200px;
+	}
+	#chat .title:before {
+		display: none;
+	}
+}
+
+@media (max-width: 479px) {
+	.container {
+		margin: 40px 0 !important;
+	}
+	#connect .tls {
+		margin: 20px 0;
+	}
+	#windows .input {
+		margin-bottom: 2px;
+	}
+	#chat .messages {
+		display: block;
+		padding: 5px 10px;
+	}
+	#chat .msg {
+		display: block;
+		padding: 2px 0;
+	}
+	#chat .msg:last-child {
+		height: auto;
+	}
+	#chat .from,
+	#chat .text {
+		background: none;
+		border: 0;
+		display: inline;
+		padding: 0;
+	}
+	#chat .time {
+		display: none;
+	}
+	#chat.hide-join .join,
+	#chat.hide-mode .mode,
+	#chat.hide-motd .motd,
+	#chat.hide-nick .nick,
+	#chat.hide-part .part,
+	#chat.hide-quit .quit {
+		display: none !important;
+	}
+}

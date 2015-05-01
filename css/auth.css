@@ -1,0 +1,63 @@
+#sign-in label {
+	display: block;
+	margin-top: 10px;
+}
+
+#sign-in .title {
+	margin-bottom: 10px;
+}
+
+#sign-in .remember {
+	float: left;
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+#sign-in .remember input {
+	float: left;
+	margin: 3px 10px 0 0;
+}
+
+#sign-in .btn {
+	margin-top: 25px;
+}
+
+#sign-in .error {
+	color: #e74c3c;
+	margin-top: 1em;
+}
+
+#sign-in .container {
+	margin-top: 120px;
+}
+
+#connect label {
+	display: block;
+	margin-top: 11px;
+}
+
+#connect .title {
+	margin-bottom: 10px;
+}
+
+#connect .port:before {
+	content: ":";
+	margin: 9px 0 0 -17px;
+	position: absolute;
+}
+
+#connect .tls {
+	float: left;
+	font-size: 14px;
+	margin-top: 6px;
+}
+
+#connect .tls input {
+	float: left;
+	margin: 3px 10px 0 0;
+}
+
+#connect .btn {
+	float: left;
+	margin-top: 30px;
+}

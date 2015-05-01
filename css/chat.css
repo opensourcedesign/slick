@@ -1,0 +1,210 @@
+
+/*** Chat ***/
+
+#chat {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#chat,
+#windows .header {
+	font: 14px;
+	line-height: 1.4;
+}
+
+#chat button:hover {
+	opacity: .6;
+}
+
+#chat .title:before {
+	font: 14px FontAwesome;
+	float: left;
+	margin-top: 3px;
+	margin-right: 5px;
+	width: 14px;
+	text-align: center;
+}
+
+#chat .title:before {
+	margin-top: 17px;
+}
+
+#chat .lobby .title:before {
+	content: "\f0a0";
+}
+
+#chat .query .title:before {
+	content: "\f0e6";
+}
+
+#chat .chat,
+#chat .sidebar {
+	top: 58px;
+}
+
+#chat .chat {
+	bottom: 0;
+	left: 200px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	right: 0px;
+}
+
+#viewport.rt .chat {
+    right: 0;
+}
+
+#chat .sidebar {
+	background: #fff;
+	border-left: 1px solid #424242;
+  border-right: 1px solid #424242;
+  top: 0px;
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	width: 200px;
+	transition: all .4s;
+	-webkit-transform: translateZ(0);
+	        transform: translateZ(0);
+	-webkit-perspective: 1000;
+	        perspective: 1000;
+}
+
+#chat .lobby .chat,
+#chat .query .chat {
+	right: 0;
+}
+
+#chat .lobby .sidebar,
+#chat .query .sidebar {
+	display: none;
+}
+
+#chat .show-more {
+	display: none;
+	padding: 10px;
+	position: absolute;
+	width: 100%;
+}
+
+#chat .show-more.show + .messages .msg:first-child {
+	padding-top: 47px !important;
+}
+
+#chat .show-more.show + .messages .msg:first-child > span {
+	padding-top: 52px !important;
+}
+
+#chat .show-more-button {
+	background: #f4f4f4;
+	background-image: linear-gradient(#f4f4f4, #ececec);
+	border: 1px solid #d7d7d7;
+	border-bottom-color: #b7b7b7;
+	border-radius: 2px;
+	color: #555;
+	font: 12px Lato, sans-serif;
+	height: 34px;
+	line-height: 0;
+	width: 100%;
+}
+
+#chat .show-more-button:hover {
+	opacity: 1;
+}
+
+
+
+
+/* Chat - Details */
+
+#chat .count {
+	background: #fafafa;
+	height: 48px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+
+#chat .count:before {
+	color: #cfcfcf;
+	font: 14px FontAwesome;
+	content: "\f002";
+	position: absolute;
+	right: 18px;
+	line-height: 50px;
+	transition: color .2s;
+	z-index: 0;
+}
+
+#chat .search {
+	color: #222;
+	border: 0;
+	background: none;
+	font: inherit;
+	outline: 0;
+	padding: 18px 16px;
+	position: relative;
+	width: 100%;
+}
+
+#chat .names {
+	bottom: 0;
+	overflow: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 10px;
+	position: absolute;
+	top: 48px;
+	width: 100%;
+}
+
+#chat .names button {
+	display: block;
+	line-height: 1.6;
+	padding: 0 16px;
+}
+
+#chat .names .inner {
+	width: 300px;
+}
+
+#chat .user-mode:before {
+	content: "";
+	display: block;
+	line-height: 1.6;
+	padding: 15px 15px 5px 16px;
+	margin-bottom: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#chat .user-mode.owner:before {
+	content: "Owners";
+}
+
+#chat .user-mode.admin:before {
+	content: "Administrators";
+}
+
+#chat .user-mode.op:before {
+	content: "Operators";
+}
+
+#chat .user-mode.half-op:before {
+	content: "Half-Operators";
+}
+
+#chat .user-mode.voice:before {
+	content: "Voiced";
+}
+
+#chat .user-mode.normal:before {
+	content: "Users";
+}

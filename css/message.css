@@ -1,0 +1,196 @@
+/* Message */
+
+#chat .messages {
+	display: table;
+	width: 100%;
+}
+
+#chat .msg {
+	display: block;
+  clear: both;
+  margin-top: 10px;
+  padding: 0px 30px 5px 60px;
+  position: relative;
+  box-sizing: border-box;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+#chat .msg:last-child {
+	height: 100%;
+}
+
+#chat .msg:last-child .text {
+	padding-bottom: 0px;
+}
+
+#chat .msg a.avatar {
+  width: 36px;
+  display: block;
+  background: #e3e3e3;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  float: left;
+}
+
+#chat .msg a.avatar img {
+  width: 36px;
+}
+
+#chat .msg a.user {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  vertical-align: text-top;
+}
+
+#chat .msg a {
+	color: #1756a9;
+}
+
+#chat .msg a.time {
+  font-size: 12px;
+  color: #d4d4d4;
+}
+
+#chat .msg a.time:hover {
+  color: #a3a3a3;
+}
+
+#chat.no-colors .from button,
+#chat.no-colors .sidebar button {
+	color: #1756a9 !important;
+}
+
+#chat.no-colors .from button.time {
+	color: #ddd;
+	text-align: right;
+  font: .75em;
+}
+
+#chat .msg span.text {
+  display: block;
+	padding-left: 0px;
+	padding-right: 10px;
+  word-wrap: break-word;
+  line-height: 21px;
+
+}
+
+#chat .msg .type {
+	color: #ccc;
+	display: none;
+	font-style: normal;
+}
+
+#chat .wrap,
+#chat .text a {
+	font-style: normal;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+#chat .self .text {
+	color: #999;
+}
+
+#chat .join .type,
+#chat .part .type,
+#chat .mode .type,
+#chat .nick .type,
+#chat .kick .type,
+#chat .quit .type,
+#chat .quit .type,
+#chat .topic .type {
+	display: inline;
+}
+
+#chat .error,
+#chat .error .from,
+#chat .highlight,
+#chat .highlight .from {
+	color: #f00;
+}
+
+#chat.hide-join .join span,
+#chat.hide-mode .mode span,
+#chat.hide-motd .motd span,
+#chat.hide-nick .nick span,
+#chat.hide-part .part span,
+#chat.hide-quit .quit {
+	display: none !important;
+}
+
+#chat .notice .type {
+	display: none;
+}
+
+#chat .action,
+#chat .chan .action .user {
+	color: #f39c12 !important;
+}
+
+#chat .action .user:before {
+	content: "* ";
+}
+
+#chat .action .user:after {
+	content: "";
+}
+
+
+
+#chat .toggle-button {
+	background: #f5f5f5;
+	border-radius: 2px;
+	display: inline-block;
+	color: #666;
+	height: 1em;
+	line-height: 0px;
+	padding: 0px 6px;
+}
+
+#chat .toggle-content {
+	background: #f5f5f5;
+	border-radius: 2px;
+	display: none;
+	color: #222;
+	font: 12px Lato;
+	max-width: 100%;
+	padding: 6px 8px;
+	margin-top: 2px;
+}
+
+#chat .toggle-content a {
+	color: inherit;
+}
+
+#chat .toggle-content img {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	margin: 2px 0;
+}
+
+#chat .toggle-content .thumb {
+	max-height: 110px;
+	max-width: 210px;
+}
+
+#chat .toggle-content .head {
+	font-weight: bold;
+}
+
+#chat .toggle-content .body {
+	color: #999;
+	max-width: 460px;
+	word-break: normal;
+	word-wrap: break-word;
+}
+
+#chat .toggle-content.show {
+	display: inline-block !important;
+}

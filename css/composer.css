@@ -1,0 +1,74 @@
+
+/*** Send Message Form ***/
+
+#form {
+	background: #424242;
+	border-top: 1px solid #ddd;
+	position: absolute;
+	bottom: 0px;
+	height: 60px;
+	left: 0;
+	right: 0px;
+}
+
+#form .inner {
+	bottom: 7px;
+	left: 7px;
+	position: absolute;
+	right: 7px;
+	top: 6px;
+}
+
+#form .input {
+	font: 14px Lato, sans-serif;
+	left: 0;
+	height: 34px;
+	margin-right: 64px;
+	position: relative;
+}
+
+#form #nick {
+	background: #f6f6f6;
+	color: #666;
+	position: absolute;
+	font: inherit;
+	font-size: 11px;
+	margin: 5px;
+	line-height: 26px;
+	height: 24px;
+	padding: 0 9px;
+	border-radius: 1px;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+#form #input {
+	border: 1px solid #cfdae1;
+	border: 1px solid #ddd;
+	font: inherit;
+	border-radius: 2px;
+	height: 100%;
+	outline: none;
+	padding: 0 10px;
+	-webkit-appearance: none;
+	width: 100%;
+}
+
+#form #submit {
+	background: #f4f4f4;
+	background-image: linear-gradient(#f4f4f4, #ececec);
+	border: 1px solid #d7d7d7;
+	border-bottom-color: #b7b7b7;
+	border-radius: 2px;
+	font: 12px Lato, sans-serif;
+	color: #555;
+	height: 34px;
+	position: absolute;
+	right: 0;
+	transition: opacity .3s;
+	width: 58px;
+}
+
+
