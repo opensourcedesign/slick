@@ -11,7 +11,7 @@ body {
 }
 
 body {
-	background: #FFF;
+	background: @white;
 	color: #222;
 	font: 16px 'Open Sans', sans-serif;
 	margin: 0;
@@ -60,7 +60,7 @@ button {
 }
 
 .btn {
-  /* CUSTOMIZABLE */
+    /* CUSTOMIZABLE */
 	border: 2px solid #1756a9;
 	border-radius: 3px;
 	color: #1756a9;
@@ -116,10 +116,10 @@ button {
 
 #topbar {
   /* CUSTOMIZABLE */
-  background: #FFF;
+  background: @white;
   height: 50px;
-  border-bottom: 1px solid #424242;
-  color: #424242;
+  border-bottom: 1px solid @grayDark;
+  color: @grayDark;
   display: flex;
 }
 
@@ -161,7 +161,7 @@ button {
 
 #viewport .lt,
 #viewport .rt {
-	color: #ccc;
+	color: @gray;
 	display: none;
 	float: left;
 	line-height: 40px;
@@ -191,15 +191,14 @@ button {
 /*** Footer ***/
 
 #footer {
-	background: #424242;
-	border-radius: 2px;
-	bottom: 4px;
-	height: 48px;
-	left: 5px;
+	background: @black;
+	bottom: 0px;
+	height: 60px;
+	left: 0px;
 	line-height: 48px;
 	position: absolute;
 	text-align: center;
-	width: 210px;
+	width: 225px;
 }
 
 #footer button {
@@ -207,7 +206,7 @@ button {
 }
 
 #footer button.active {
-	color: #fff;
+	color: @white;
 }
 
 #footer .icon {
@@ -256,9 +255,9 @@ button {
 /*** Main ***/
 
 #main {
-	background: #fff;
+	background: @white;
 	border-radius: 2px;
-	bottom: 4px;
+	bottom: 0px;
 	left: 225px;
 	overflow: hidden;
 	position: absolute;
@@ -338,9 +337,9 @@ button {
 }
 
 #windows .header {
-  position: absolute;
-  left: 180px;
-  width: 100%;
+    position: absolute;
+    left: 180px;
+    width: 100%;
 	border-bottom: 1px solid #424242;
 	line-height: 50px !important;
 	height: 50px;
