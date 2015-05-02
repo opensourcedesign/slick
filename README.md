@@ -2,7 +2,9 @@
 
 A "Slack" inspired theme that pushes the boundaries of the [Shout IRC Client](http://shout-irc.com). Currently the normal instance of Shout does not support a theme with this drastic of changes. A few of us are working on that from a [fork of Shout](https://github.com/bnvk/shout).
 
-To help work on this theme, do the following:
+### Installing
+
+To install and use this theme in your Shout client do the following:
 
 * Make sure you have [NodeJS](http://nodejs.org) installed
 * Clone the Shout fork `git@github.com:bnvk/shout.git`
@@ -20,6 +22,15 @@ Now it's time to install Slick theme
 * Sart Shout up again `node index.js`
 
 Still very much a work in progress... lend a hand :)
+
+### Developing
+
+To help develop the Slick theme, you will need to run Grunt to recompile the JS and styles
+
+* Navigate to the `themes/slick` folder
+* Install dependencies `npm install`
+* Compile LESS styles into CSS `grunt watch` hangs and listens for updates to files
+* To modify HTML `views/*.tmp` files run `grunt build`
 
 
 ### Reasons
