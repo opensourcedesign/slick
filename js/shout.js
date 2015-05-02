@@ -514,7 +514,7 @@ $(function() {
 			.end();
 
         // UI - Update page title
-		var title = "Shout";
+		var title = $('#topbar').find('h1').html();
 		if (chan.data("title")) {
 			title = chan.data("title") + " — " + title;
 		}
