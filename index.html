@@ -19,7 +19,7 @@
 	<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png">
 
 	</head>
-	<body class="<%= public ? "public" : "" %>" data-channels_actionable="<%= channelsActionable %>">
+	<body class="<%= public ? "public" : "" %>">
 
   <header id="topbar">
     <img src="img/logo.png">
@@ -91,7 +91,7 @@
 					<form class="container" action="">
 						<div class="row">
 							<div class="col-sm-12">
-								<h1 class="title">Connect</h1>
+								<h1 class="title">Sign In</h1>
 							</div>
 							<div <%= typeof(displayNetwork) !== "undefined" && !displayNetwork ? 'style="display: none;"' : ''%>>
 								<div class="col-sm-12">
@@ -130,8 +130,11 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<div class="col-sm-12">
-								<h2>User preferences</h2>
+              <div class="col-sm-3">
+								<label>Name</label>
+							</div>
+							<div class="col-sm-9">
+								<input class="input" name="realname" class="input" value="<%= defaults.realname %>">
 							</div>
 							<div class="col-sm-3">
 								<label>Nick</label>
@@ -147,18 +150,6 @@
 								<input class="input username" name="username" value="<%= defaults.username %>">
 							</div>
 							<div class="clearfix"></div>
-							<div class="col-sm-3">
-								<label>Real name</label>
-							</div>
-							<div class="col-sm-9">
-								<input class="input" name="realname" class="input" value="<%= defaults.realname %>">
-							</div>
-							<div class="col-sm-3" <%= !channelsActionable ? 'style="display: none;"' : ''%>>
-								<label>Channels</label>
-							</div>
-							<div class="col-sm-9" <%= !channelsActionable ? 'style="display: none;"' : ''%>>
-								<input class="input" name="join" class="input" value="<%= defaults.join %>">
-							</div>
 							<div class="col-sm-3 clearfix"></div>
 							<div class="col-sm-9">
 								<button type="submit" class="btn">
