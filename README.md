@@ -1,13 +1,13 @@
 # Slick
 
-A "Slack" inspired theme that pushes the boundaries of the [Shout IRC Client](http://shout-irc.com). Currently the normal instance of Shout does not support a theme with this drastic of changes. A few of us are working on that from a [fork of Shout](https://github.com/bnvk/shout).
+A "Slack" inspired theme that pushes the boundaries of the [Shout IRC Client](http://shout-irc.com). The current Shout build does not support a theme this drastic yet, but there is [a branch of Shout](https://github.com/erming/shout/tree/theme-support) under development that does :)
 
-### Installing
+## Installing
 
 To install and use this theme in your Shout client do the following:
 
 * Make sure you have [NodeJS](http://nodejs.org) installed
-* Clone the Shout fork `git@github.com:bnvk/shout.git`
+* Clone Shout with new theme branch `git clone http://github.com/erming/shout -b theme-support`
 * Navigate to the repo `cd shout`
 * Install dependencies `npm install`
 * Configure Shout `node index.js config`
@@ -17,13 +17,22 @@ Now it's time to install Slick theme
 
 * Navigate into themes folder `cd themes`
 * Clone the Slick theme `git@github.com:opensourcedesign/slick.git`
-* Edit Shout config file `~/.shout/config.js` value to `theme: "slick"`
+* Edit Shout config file `vim ~/.shout/config.js` on MacOS or Linux
+
+```
+theme: {
+  name: "slick",
+  title: "Your Site or Name",
+  channels: true
+}
+```
+
 * Go back to main directory `cd ../`
 * Sart Shout up again `node index.js`
 
 Still very much a work in progress... lend a hand :)
 
-### Developing
+## Developing
 
 To help develop the Slick theme, you will need to run Grunt to recompile the JS and styles
 
@@ -35,8 +44,10 @@ To help develop the Slick theme, you will need to run Grunt to recompile the JS 
 
 ### Reasons
 
-The main inspiration for this theme is to close the gap between open source devs and designers. A lot of devs still love IRC as they spend much of there at the command line. However, designers (and an increasing number of devs) are liking Slack and other similar GUI style chat clients more and more.
+The main inspiration for this theme is to close the gap between open source devs and designers. A lot of devs and Debian users still love IRC. However, a lot designers (and an increasing number of devs) are liking Slack (and other similar GUI chat clients) more and more. The goal of **Slick** is to improve IRC's usability to match that of Slack.
 
-For now you can use the [web interface for the #opensourcedesign chat room](https://webchat.freenode.net/?channels=opensourcedesign). We are working on a better way of having the log available (it's currently available [here](https://botbot.me/freenode/opensourcedesign/)), and setting up a [nicer app](http://shout-irc.com/) to use it.
+### Chat with the OSD Community
 
-If you know how to use IRC, connect to #opensourcedesign on freenode.net ;)
+Until the Slick theme is totally ready, you can use this [web interface](http://chat.opensourcedesign.net) for our chat room.
+
+If you know how to use IRC, you can also just connect to #opensourcedesign on freenode.net using your normal IRC client ;)
