@@ -1,0 +1,17 @@
+{
+  "name": "shout-slick",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/opensourcedesign/slick",
+  "authors": [
+    "Brennan Novak <hi@bnvk.me>"
+  ],
+  "description": "Nutrition Survey app for mobile devices",
+  "keywords": [
+    ""
+  ],
+  "license": "AGPLv3"
+}
