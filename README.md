@@ -6,10 +6,11 @@ A "Slack" inspired theme that pushes the boundaries of the [Shout IRC Client](ht
 
 To install and use this theme in your Shout client do the following:
 
-* Make sure you have [NodeJS](http://nodejs.org) installed
+* Make sure you have [NodeJS](http://nodejs.org) and [Bower](http://bower.io) installed
 * Clone Shout with new theme branch `git clone http://github.com/erming/shout -b theme-support`
 * Navigate to the repo `cd shout`
-* Install dependencies `npm install`
+* Install Node dependencies `npm install`
+* Install Bower dependencies `bower install`
 * Configure Shout `node index.js config`
 * Run Shout to test it is set up correctly `node index.js`
 
