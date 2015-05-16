@@ -1,4 +1,5 @@
 $(function() {
+
 	var socket = io();
 	var commands = [
 		"/close",
@@ -53,9 +54,12 @@ $(function() {
 		animation: "none"
 	});
 
+
+    // Passes to Handlebars
 	function render(name, data) {
 		return Handlebars.templates[name](data);
 	}
+
 
 	Handlebars.registerHelper(
 		"partial", function(id) {
@@ -74,6 +78,9 @@ $(function() {
 	});
 
 	socket.on("auth", function(data) {
+
+console.log('socket.on(auth) here')
+
 		var body = $("body");
 		var login = $("#sign-in");
 		if (!login.length) {
@@ -112,6 +119,9 @@ $(function() {
 	});
 
 	socket.on("init", function(data) {
+
+console.log('socket.on(init) here')
+
 		if (data.networks.length === 0) {
 			$("#footer").find(".connect").trigger("click");
 		} else {
@@ -158,38 +168,78 @@ $(function() {
 		sortable();
 	});
 
+
+    // Joining a Channel
 	socket.on("join", function(data) {
+
+console.log('socket.on(join) here')
+
 		var id = data.network;
 		var network = sidebar.find("#network-" + id);
+
 		network.append(
 			render("chan", {
 				channels: [data.chan]
 			})
 		);
+
 		chat.append(
 			render("chat", {
 				channels: [data.chan]
 			})
 		);
+
 		var chan = sidebar.find(".chan")
 			.sort(function(a, b) { return $(a).data("id") - $(b).data("id"); })
 			.last();
+
 		if (!whois) {
 			chan = chan.filter(":not(.query)");
 		}
+
 		whois = false;
 		chan.click();
 	});
 
-	socket.on("msg", function(data) {
-		var target = "#chan-" + data.chan;
-		if (data.msg.type == "error") {
-			target = "#chan-" + chat.find(".active").data("id");
-		}
 
+    // Publish Msg into Chat
+	socket.on("msg", function(data) {
+
+console.log('secon.on(msg) chan ' + data.chan)
+
+		var target = "#chan-" + data.chan;
+		var type = data.msg.type;
 		var chan = chat.find(target);
 		var from = data.msg.from;
 
+if (type != 'motd' && type != 'notice') {
+console.log(data.msg)
+}
+
+
+		if (type == "error") {
+			target = "#chan-" + chat.find(".active").data("id");
+		}
+
+        // 
+        if (type == "notice") {
+
+        }
+
+        // Message from Server?
+        if (type == "motd") {
+
+            
+
+        }
+
+        if (type == "topic") {
+
+            $(target).find('div.header span.topic').html(data.msg.text);
+
+        }
+
+        // Add Message To Thread
 		chan.find(".messages")
 			.append(render("msg", {messages: [data.msg]}))
 			.trigger("msg", [
@@ -197,11 +247,12 @@ $(function() {
 				data.msg
 			]);
 
+
 		if (!chan.hasClass("channel")) {
 			return;
 		}
 
-		var type = data.msg.type;
+
 		if (type == "message" || type == "action") {
 			var nicks = chan.find(".users").data("nicks");
 			if (nicks) {
@@ -211,9 +262,15 @@ $(function() {
 				}
 			}
 		}
+
 	});
 
+
 	socket.on("more", function(data) {
+
+console.log('secon.on(more)')
+console.log(data)
+
 		var target = data.chan;
 		var chan = chat
 			.find("#chan-" + target)
@@ -225,7 +282,13 @@ $(function() {
 		}
 	});
 
+
+    // Join Networ & Chanels
 	socket.on("network", function(data) {
+
+console.log('secon.on(network)')
+console.log(data)
+
 		sidebar.find(".empty").hide();
 		sidebar.find(".networks").append(
 			render("network", {
@@ -323,19 +386,22 @@ $(function() {
 		users.data("nicks", nicks);
 	});
 
+
+
+    // Settings & UI
 	$.cookie.json = true;
 
 	var settings = $("#settings");
 	var options = $.extend({
 		badge: false,
 		colors: false,
-		join: true,
+		join: false,
 		links: true,
 		mode: true,
 		motd: false,
-		nick: true,
+		nick: false,
 		notification: true,
-		part: true,
+		part: false,
 		thumbnails: true,
 		quit: true,
 	}, $.cookie("settings"));
@@ -598,7 +664,13 @@ $(function() {
 			.click();
 	});
 
+
+    // Render Message
 	chat.on("msg", ".messages", function(e, target, msg) {
+
+console.log('inside chat.on(msg)');
+console.log(msg);
+
 		var button = sidebar.find(".chan[data-target=" + target + "]");
 		var isQuery = button.hasClass("query");
 		var type = msg.type;
@@ -638,6 +710,7 @@ $(function() {
 			"quit",
 			"nick",
 			"mode",
+			"topic",
 		];
 		if ($.inArray(type, ignore) !== -1){
 			return;
