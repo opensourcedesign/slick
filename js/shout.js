@@ -29,6 +29,7 @@ $(function() {
 		"/whois"
 	];
 
+	var navbar = $("#navbar");
 	var sidebar = $("#sidebar, #footer");
 	var chat = $("#chat");
 
@@ -359,6 +360,7 @@ console.log(data)
 		}
 	});
 
+  // FIXME: remove this
 	socket.on("toggle", function(data) {
 		var toggle = $("#toggle-" + data.id);
 		toggle.parent().after(render("toggle", {toggle: data}));
@@ -520,6 +522,8 @@ console.log(data)
 
 	$(window).on("focus", focus);
 
+	var top = 1;
+
 	function focus() {
 		var chan = chat.find(".active");
 		if (screen.width > 768 && chan.hasClass("chan")) {
@@ -527,34 +531,26 @@ console.log(data)
 		}
 	}
 
-	var top = 1;
-	sidebar.on("click", ".chan, button", function() {
+  // Shows view in #main
+  function showView(self) {
 
-		var self = $(this);
 		var target = self.data("target");
 		if (!target) {
 			return;
 		}
 
-        // Hide Chan / Network close buttons
-        // probably not be ideal way to do this
-        // https://github.com/erming/shout/issues/384
-        if (!$('body').data('channels_actionable')) {
-            sidebar.find('span.close').hide();
-            chat.find('button.close').hide();
-        }
-
-        // Update Chat DOM elem
+    // Update Chat DOM elem
 		chat.data(
 			"id",
 			self.data("id")
 		);
+
 		socket.emit(
 			"open",
 			self.data("id")
 		);
 
-        // UI - Update sidebar button state
+    // UI - Update sidebar button state
 		sidebar.find(".active").removeClass("active");
 		self.addClass("active")
 			.find(".badge")
@@ -562,7 +558,7 @@ console.log(data)
 			.data("count", "")
 			.empty();
 
-        // UI - Update favicon
+    // UI - Update favicon
 		if (sidebar.find(".highlight").length === 0) {
 			favico.badge("");
 		}
@@ -570,7 +566,7 @@ console.log(data)
 		viewport.removeClass("lt");
 		$("#windows .active").removeClass("active");
 
-        // Select Channel DOM to update
+    // Select Channel DOM to update
 		var chan = $(target)
 			.addClass("active")
 			.trigger("show")
@@ -579,14 +575,14 @@ console.log(data)
 			.sticky()
 			.end();
 
-        // UI - Update page title
+    // UI - Update page title
 		var title = $('#topbar').find('h1').html();
 		if (chan.data("title")) {
 			title = chan.data("title") + " — " + title;
 		}
 		document.title = title;
 
-        // 
+    // 
 		if (self.hasClass("chan")) {
 			var nick = self
 				.closest(".network")
@@ -599,6 +595,18 @@ console.log(data)
 		if (screen.width > 768 && chan.hasClass("chan")) {
 			input.focus();
 		}
+  }
+
+  // Navbar Events
+	navbar.on("click", "a", function() {
+		var self = $(this);
+		showView(self);
+  });
+
+  // Sidebar Events
+	sidebar.on("click", ".chan, button", function() {
+    var self = $(this);
+		showView(self);
 	});
 
 	sidebar.on("click", "#sign-out", function() {
