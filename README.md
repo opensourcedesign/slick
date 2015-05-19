@@ -10,15 +10,15 @@ To install and use this theme in your Shout client do the following:
 * Clone Shout with new theme branch `git clone http://github.com/erming/shout -b theme-support`
 * Navigate to the repo `cd shout`
 * Install Node dependencies `npm install`
-* Install Bower dependencies `bower install`
+* Install Bower dependencies `bower install` (Ignore for now, does not exist yet :)
 * Configure Shout `node index.js config`
-* Run Shout to test it is set up correctly `node index.js`
+* Run Shout to test it is set up correctly `node index.js` (Ignore for now, you need to install the theme first)
 
-Now it's time to install Slick theme
+Now it's time to install the Slick theme
 
-* Navigate into themes folder `cd themes`
+* Navigate into the themes folder `cd themes`
 * Clone the Slick theme `git@github.com:opensourcedesign/slick.git`
-* Edit Shout config file `vim ~/.shout/config.js` on MacOS or Linux
+* Edit the Shout config file `node ~/shout/index.js config` on MacOS or Linux
 
 ```
 theme: {
@@ -28,8 +28,8 @@ theme: {
 }
 ```
 
-* Go back to main directory `cd ../`
-* Sart Shout up again `node index.js`
+* Go back to the main directory `cd ../`
+* Start Shout up again `node index.js`
 
 Still very much a work in progress... lend a hand :)
 
