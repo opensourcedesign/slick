@@ -10,7 +10,6 @@ To install and use this theme in your Shout client do the following:
 * Clone Shout with new theme branch `git clone http://github.com/erming/shout -b theme-support`
 * Navigate to the repo `cd shout`
 * Install Node dependencies `npm install`
-* Install Bower dependencies `bower install` (Ignore for now, does not exist yet :)
 * Configure Shout `node index.js config`
 * Run Shout to test it is set up correctly `node index.js` (Ignore for now, you need to install the theme first)
 
@@ -37,10 +36,11 @@ Still very much a work in progress... lend a hand :)
 
 To help develop the Slick theme, you will need to run Grunt to recompile the JS and styles
 
-* Navigate to the `themes/slick` folder
-* Install dependencies `npm install`
-* Compile LESS styles into CSS `grunt watch` hangs and listens for updates to files
-* To modify HTML `views/*.tmp` files run `grunt build`
+* Navigate to the `cd themes/slick` folder
+* Install Node dependencies `npm install`
+* Install Bower dependencies `bower install`
+* To Compile LESS styles into CSS `grunt watch` hangs & listens for updates to files
+* To modify the HTML templates in `views/*.tmp` files run `grunt build`
 
 
 ### Reasons
