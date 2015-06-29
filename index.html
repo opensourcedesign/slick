@@ -11,7 +11,8 @@
 
 	<title><%= theme.title %></title>
 
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
 
 	<link rel="shortcut icon" href="/img/favicon.png">
 	<link rel="icon" sizes="192x192" href="/img/touch-icon-192x192.png">
@@ -20,13 +21,66 @@
 	</head>
 	<body class="<%= public ? "public" : "" %>">
 
-  <header id="topbar">
-    <img src="img/logo.png">
-    <h1><%= theme.title %></h1>
-  </header>
-
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png">
+          <%= theme.title %>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" class="dropdown-toggle" id="dropdownMenuNav" data-toggle="dropdown" aria-expanded="true">
+              <span class="fa fa-bars"></span> Menu
+            </a>
+            <ul id="navbar-dropdown-menu" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuNav">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-target="#sign-in" data-title="Sign In" data-placement="top" title="Sign In">
+                  <span class="fa fa-sign-in"></span> Sign In
+                </a>
+              </li>
+             <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-target="#connect" data-title="Join Chat" data-placement="top" title="Join Chat">
+                  <span class="fa fa-comment"></span> Join Chat
+                </a>
+              </li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-target="#add-account" data-title="Add Account" data-placement="top" title="Add Account">
+                  <span class="fa fa-plus"></span> Add Account
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-target="#settings" data-title="Settings" data-placement="top" title="Settings">
+                  <span class="fa fa-cog"></span> Settings
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" data-target="#about" data-title="About" data-placement="top" title="About">
+                  <span class="fa fa-info-circle"></span> About
+                </a>
+              </li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#" id="sign-out" data-placement="top" title="Sign out">
+                  <span class="fa fa-sign-out"></span> Sign Out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 	<div id="wrap">
-
 	<div id="viewport">
 		<aside id="sidebar" class="tse-scrollable">
 			<div class="tse-content">
@@ -37,10 +91,7 @@
 			</div>
 		</aside>
 		<footer id="footer">
-			<button class="icon sign-in" data-target="#sign-in" data-title="Sign in" data-placement="top" title="Sign in to Shout"></button>
 			<button class="icon connect" data-target="#connect" data-title="Connect" data-placement="top" title="Connect to network"></button>
-			<button class="icon settings" data-target="#settings" data-title="Settings" data-placement="top" title="Client settings"></button>
-			<button id="sign-out" class="icon sign-out" data-placement="top" title="Sign out"></button>
 		</footer>
 		<div id="main">
 			<div id="windows">
@@ -52,8 +103,8 @@
 					<form class="container" action="">
 						<div class="row">
 							<div class="col-xs-12">
-								<h1 class="title">Sign in</h1>
-                <p class="text-detail">To your </p>
+								<h1 class="title">Sign In</h1>
+                <p class="text-detail">Need an account on <strong><%= theme.title %></strong>? Contact the site owner</p>
 							</div>
 							<div class="col-xs-12">
 								<label>
@@ -78,7 +129,7 @@
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn">
-									Sign in
+									<span class="fa fa-sign-in"></span> Sign In
 								</button>
 							</div>
 						</div>
@@ -91,8 +142,8 @@
 					<form class="container" action="">
 						<div class="row">
 							<div class="col-sm-12">
-								<h1 class="title">Sign In</h1>
-                <p class="text-detail">To the <strong><%= defaults.name %></strong> IRC network</p>
+								<h1 class="title">Join Chat</h1>
+                <p class="text-detail">On the <strong><%= defaults.name %></strong> IRC network</p>
 							</div>
               <div class="col-sm-3">
 								<label>Name</label>
@@ -111,12 +162,107 @@
 							<div class="col-sm-3 clearfix"></div>
 							<div class="col-sm-9">
 								<button type="submit" class="btn">
-									Connect
+									<span class="fa fa-sign-in"></span> Connect
 								</button>
 							</div>
 						</div>
 					</form>
 				</div>
+        <div id="add-account" data-title="Add Account" class="window">
+					<div class="header">
+						<button class="lt"></button>
+					</div>
+					<form class="container" action="">
+						<div class="row">
+							<div class="col-sm-12">
+								<h1 class="title">Add Account</h1>
+							</div>
+              <div class="col-sm-12">
+                <p>&nbsp;</p>
+              </div>
+              <div class="col-sm-4">
+                <select id="select-account-preset">
+                  <option value="irc-freenode">Freenode (IRC)</option>
+                  <option value="irc-otfc">OTFC (IRC)</option>
+                  <option value="irc-pirate">Pirate (IRC)</option>
+                </select>
+              </div>
+							<div>
+								<div class="col-sm-12">
+									<h2>Network</h2>
+								</div>
+								<div class="col-sm-3">
+								<label>Name</label>
+									</div>
+								<div class="col-sm-9">
+									<input class="input" name="name" value="<%= defaults.name %>">
+								</div>
+								<div class="col-sm-3">
+									<label>Server</label>
+								</div>
+								<div class="col-sm-6 col-xs-8">
+									<input class="input" name="host" value="<%= defaults.host %>">
+								</div>
+								<div class="col-sm-3 col-xs-4">
+									<div class="port">
+										<input class="input" name="port" value="<%= defaults.port %>">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="col-sm-3">
+									<label>Password</label>
+								</div>
+								<div class="col-sm-9">
+									<input class="input" type="password" name="password" value="<%= defaults.password %>">
+								</div>
+								<div class="col-sm-3"></div>
+								<div class="col-sm-9">
+									<label class="tls">
+										<input type="checkbox" name="tls" <%= defaults.tls ? 'checked="checked"' : '' %>>
+										Enable TLS/SSL
+									</label>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+              <div class="clearfix"></div>
+							<div class="col-sm-12">
+								<h2>User</h2>
+							</div>
+              <div class="col-sm-3">
+								<label>Nick</label>
+							</div>
+							<div class="col-sm-5">
+								<input class="input nick" name="nick" value="<%= defaults.nick %>">
+							</div>
+							<div class="clearfix"></div>
+							<div class="col-sm-3">
+								<label>Username</label>
+							</div>
+							<div class="col-sm-5">
+								<input class="input username" name="username" value="<%= defaults.username %>">
+							</div>
+							<div class="clearfix"></div>
+							<div class="col-sm-3">
+								<label>Name</label>
+							</div>
+							<div class="col-sm-9">
+								<input class="input" name="realname" class="input" value="<%= defaults.realname %>">
+							</div>
+							<div class="col-sm-3">
+								<label>Channels</label>
+							</div>
+							<div class="col-sm-9">
+								<input class="input" name="join" class="input" value="<%= defaults.join %>">
+							</div>
+							<div class="col-sm-3 clearfix"></div>
+							<div class="col-sm-9">
+								<button type="submit" class="btn">
+									<span class="fa fa-plus"></span> Add Account
+								</button>
+							</div>
+						</div>
+					</form>
+        </div>
 				<div id="settings" data-title="Settings" class="window">
 					<div class="header">
 						<button class="lt"></button>
@@ -174,23 +320,6 @@
 									Enable colored nicks
 								</label>
 							</div>
-							<% if (typeof prefetch === "undefined" || prefetch !== false) { %>
-							<div class="col-sm-12">
-								<h2>Links and URLs</h2>
-							</div>
-							<div class="col-sm-6">
-								<label class="opt">
-									<input type="checkbox" name="thumbnails">
-									Auto-expand thumbnails
-								</label>
-							</div>
-							<div class="col-sm-6">
-								<label class="opt">
-									<input type="checkbox" name="links">
-									Auto-expand links
-								</label>
-							</div>
-							<% } %>
 							<div class="col-sm-12">
 								<h2>Notifications</h2>
 							</div>
@@ -211,12 +340,25 @@
 									<button id="play">Play sound</button>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div id="about" data-title="About" class="window">
+					<div class="header">
+						<button class="lt"></button>
+					</div>
+					<div class="container">
+						<div class="row">
 							<div class="col-sm-12">
-								<h2>About Shout</h2>
+								<h1 class="title">About</h1>
 							</div>
+              <div class="col-sm-12">
+                <h2>Slick</h2>
+                <p>Slick is open source software that allows you to communicate freely sans being monitored, recorded and surveilled by for profit corporations and governments. Online freedom is possible and is worth it. Slick was created by the <a href="http://opensourcedesign.net" target="_blank">Open Source Design</a> team and was inspired by the seriously well designed app, Slack.</p>
+              </div>
 							<div class="col-sm-12">
-								<p class="about">
-									You're currently running version <small><%= version %></small><br>
+                <h2>Shout</h2>
+                <p class="about"><a href="http://shout-irc.com" target="_blank">Shout</a> is the IRC app that the Slick theme runs on top of. You're currently running <a href="http://shout-irc.com" target="_blank">Shout</a> version <small><%= version %></small><br>
 									<a href="https://raw.githubusercontent.com/erming/shout/master/CHANGELOG.md" target="_blank">Check for updates</a>
 								</p>
 							</div>
@@ -241,6 +383,7 @@
 
 	<script src="js/libs.min.js"></script>
 	<script src="js/shout.templates.js"></script>
+  <script src="../bower_components/bootstrap/js/dropdown.js"></script>
 	<script src="js/shout.js"></script>
 
 	</body>
