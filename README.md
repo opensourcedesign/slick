@@ -2,6 +2,10 @@
 
 A "Slack" inspired theme that pushes the boundaries of the [Shout IRC Client](http://shout-irc.com). The current Shout build does not support a theme this drastic yet, but there is [a branch of Shout](https://github.com/erming/shout/tree/theme-support) under development that does :)
 
+## THIS IS CURRENTLY BROKEN AND A TOTAL WIP / UNDER DEV
+
+Thanks for your interest, but not much has happened over the last month (May - June). Dev will resume, and it will be finish soon, hopefully. Ping [@bnvk](https://github.com/bnvk) and help lend a hand ;)
+
 ## Installing
 
 To install and use this theme in your Shout client do the following:
