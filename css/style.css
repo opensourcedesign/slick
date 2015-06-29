@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 /* Bootstrap */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -4373,8 +4371,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #ffffff;
+  border-color: #000000;
 }
 .navbar-default .navbar-brand {
   color: #777777;
@@ -4399,7 +4397,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
-  background-color: #e7e7e7;
+  background-color: #eeeeee;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -4419,12 +4417,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #e7e7e7;
+  border-color: #000000;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #e7e7e7;
+  background-color: #eeeeee;
   color: #555555;
 }
 @media (max-width: 767px) {
@@ -4440,7 +4438,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555555;
-    background-color: #e7e7e7;
+    background-color: #eeeeee;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -5559,10 +5557,6 @@ button.close {
 *  Version 0.0.1
 *	 Designed and built by @brennannovak based on original Shout Theme
 */
-@font-face {
-  font-family: FontAwesome;
-  src: url("fonts/fontawesome.svg") format("svg"), url("fonts/fontawesome.woff") format("woff");
-}
 html,
 body {
   height: 100%;
@@ -5638,7 +5632,7 @@ button {
   color: #b3b3b3;
 }
 .container {
-  margin: 80px auto;
+  margin: 45px auto;
   max-width: 480px;
   overflow: hidden;
   overflow-y: auto;
@@ -5656,29 +5650,28 @@ button {
   color: rgba(0, 0, 0, 0.35) !important;
 }
 /*** Topbar ***/
-#topbar {
-  /* CUSTOMIZABLE */
-  background: #ffffff;
-  height: 50px;
-  border-bottom: 1px solid #424242;
-  color: #424242;
-  display: flex;
+.navbar-brand {
+  position: relative;
+  top: 0px;
+  left: 5px;
+  display: inline-block;
+  font-family: 'Open Sans Light', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
 }
-#topbar img {
+.navbar-brand img {
   display: inline-block;
   height: 30px;
   position: relative;
-  top: 9px;
-  left: 15px;
+  top: -5px;
+  left: 0px;
 }
-#topbar h1 {
-  position: relative;
-  top: 6px;
-  left: 25px;
-  display: inline-block;
-  font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif;
-  font-size: 24px;
-  font-weight: 300;
+.navbar-right {
+  margin-right: 5px;
+}
+.navbar-nav li.account a input[type=checkbox] {
+  float: right;
 }
 #wrap {
   position: absolute;
@@ -5730,19 +5723,13 @@ button {
   position: absolute;
   text-align: center;
   width: 225px;
+  display: none;
 }
 #footer button {
   border: 0;
 }
 #footer button.active {
   color: #ffffff;
-}
-#footer .icon {
-  color: #9ca5b4;
-  display: inline-block;
-  font: 16px FontAwesome;
-  line-height: 34px;
-  padding: 0px 12px;
 }
 .signed-out #footer .sign-in {
   display: inline-block;
@@ -5755,27 +5742,15 @@ button {
 .public #footer .sign-out {
   display: none;
 }
-#footer .sign-in {
+.sign-in {
   display: none;
-}
-#footer .sign-in:before {
-  content: "\f023";
-}
-#footer .connect:before {
-  content: "\f067";
-}
-#footer .settings:before {
-  content: "\f013";
-}
-#footer .sign-out:before {
-  content: "\f13e";
 }
 /*** Main ***/
 #main {
   background: #ffffff;
   border-radius: 2px;
   bottom: 0px;
-  left: 225px;
+  left: 0px;
   overflow: hidden;
   position: absolute;
   right: 0px;
@@ -5883,6 +5858,58 @@ button {
 #windows .window .header {
   display: none;
 }
+/*** Fonts ***/
+/* Lato */
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/Lato-Regular.eot');
+  src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */ url('fonts/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  
+  /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('fonts/Lato-Bold.eot');
+  src: url('fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/Lato-Bold.woff') format('woff'), /* Modern Browsers */ url('fonts/Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  
+  /* IE9 Compat Modes */
+}
+/* OpenSans */
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('fonts/OpenSans-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('fonts/OpenSans-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+/*** Icons ***/
+.navbar .icon {
+  color: #424242;
+  display: inline-block;
+  font: 16px FontAwesome;
+  line-height: 16px;
+  padding: 0px 5px;
+}
 #sign-in label {
   display: block;
   margin-top: 10px;
@@ -5905,9 +5932,6 @@ button {
 #sign-in .error {
   color: #e74c3c;
   margin-top: 1em;
-}
-#sign-in .container {
-  margin-top: 120px;
 }
 #connect label {
   display: block;
@@ -6064,7 +6088,7 @@ button {
 /*** Chat ***/
 #chat {
   bottom: 0;
-  left: 0;
+  left: 225px;
   position: absolute;
   right: 0;
   top: 0;
@@ -6076,23 +6100,6 @@ button {
 }
 #chat button:hover {
   opacity: .6;
-}
-#chat .title:before {
-  font: 14px FontAwesome;
-  float: left;
-  margin-top: 3px;
-  margin-right: 5px;
-  width: 14px;
-  text-align: center;
-}
-#chat .title:before {
-  margin-top: 17px;
-}
-#chat .lobby .title:before {
-  content: "\f0a0";
-}
-#chat .query .title:before {
-  content: "\f0e6";
 }
 #chat .chat,
 #chat .sidebar {
