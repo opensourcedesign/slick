@@ -1,10 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
-@font-face {
-	font-family: FontAwesome;
-	src: url("fonts/fontawesome.svg") format("svg"), url("fonts/fontawesome.woff") format("woff");
-}
-
 html,
 body {
 	height: 100%;
@@ -94,7 +87,7 @@ button {
 }
 
 .container {
-	margin: 80px auto;
+	margin: 45px auto;
 	max-width: 480px;
 	overflow: hidden;
 	overflow-y: auto;
@@ -118,31 +111,31 @@ button {
 
 /*** Topbar ***/
 
-#topbar {
-  /* CUSTOMIZABLE */
-  background: @white;
-  height: 50px;
-  border-bottom: 1px solid @grayDark;
-  color: @grayDark;
-  display: flex;
+.navbar-brand {
+  position: relative;
+  top: 0px;
+  left: 5px;
+  display: inline-block;
+  font-family: 'Open Sans Light', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
 }
 
-#topbar img {
+.navbar-brand img {
   display: inline-block;
   height: 30px;
   position: relative;
-  top: 9px;
-  left: 15px;
+  top: -5px;
+  left: 0px;
 }
 
-#topbar h1 {
-  position: relative;
-  top: 6px;
-  left: 25px;
-  display: inline-block;
-  font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif;
-  font-size: 24px;
-  font-weight: 300;
+.navbar-right {
+  margin-right: 5px;
+}
+
+.navbar-nav li.account a input[type=checkbox] {
+  float: right;
 }
 
 #wrap {
@@ -203,6 +196,7 @@ button {
 	position: absolute;
 	text-align: center;
 	width: 225px;
+  display: none;
 }
 
 #footer button {
@@ -211,14 +205,6 @@ button {
 
 #footer button.active {
 	color: @white;
-}
-
-#footer .icon {
-	color: #9ca5b4;
-	display: inline-block;
-	font: 16px FontAwesome;
-	line-height: 34px;
-	padding: 0px 12px;
 }
 
 .signed-out #footer .sign-in {
@@ -235,26 +221,9 @@ button {
 	display: none;
 }
 
-#footer .sign-in {
+.sign-in {
 	display: none;
 }
-
-#footer .sign-in:before {
-	content: "\f023";
-}
-
-#footer .connect:before {
-	content: "\f067";
-}
-
-#footer .settings:before {
-	content: "\f013";
-}
-
-#footer .sign-out:before {
-	content: "\f13e";
-}
-
 
 /*** Main ***/
 
@@ -262,7 +231,7 @@ button {
 	background: @white;
 	border-radius: 2px;
 	bottom: 0px;
-	left: 225px;
+	left: 0px; // 225px;
 	overflow: hidden;
 	position: absolute;
 	right: 0px;
